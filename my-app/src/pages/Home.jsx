@@ -1,14 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Home() {
-  return (
-    <form>
-      <h1>Login</h1>
-      <div>
-        <input type="email" required/>
-      </div>
-    </form>
-  )
-}
+const Home = () => {
+  return <div>Home</div>;
+};
 
-export default Home
+export default Home;

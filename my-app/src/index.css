@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+  background-color: transparent;
+  border: black;
+  border-bottom: 1px solid;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
