@@ -29,6 +29,6 @@ const blogSlice = createSlice({
   },
 });
 
-export const { addBlog, removeBlog, updateBlog } = blogSlice.actions;
+export const { addBlog } = blogSlice.actions;
 
 export default blogSlice.reducer;
