@@ -1,23 +1,28 @@
+import React from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import Navbar from "../components/NavBar";
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const [blog, setBlog] = useState(null);
+  const blogs = useSelector((state) => state.blogs.blogs);
 
-  useEffect(() => {
-    const storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-    const foundBlog = storedBlogs.find((b) => b.id === Number(id));
-    setBlog(foundBlog);
-  }, [id]);
+  const blog = blogs.find((blog) => blog.id === parseInt(id));
 
-  if (!blog) return <div className="p-6">Blog bulunamadı.</div>;
+  if (!blog) {
+    return <p className="text-red-500">Blog bulunamadı</p>;
+  }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold">{blog.title}</h1>
-      <p className="mt-4">{blog.content}</p>
-    </div>
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-gray-100 p-6">
+        <section className="flex flex-col gap-4">
+          <h1 className="text-2xl font-bold">{blog.title}</h1>
+          <p className="text-sm font-normal">{blog.content}</p>
+        </section>
+      </main>
+    </>
   );
 };
 

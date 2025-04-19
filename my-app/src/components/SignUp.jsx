@@ -38,7 +38,7 @@ const SignUp = ({ setActiveTab }) => {
           placeholder="E-posta"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border focus:border-b-2 focus:border-red-500"
         />
 
         <input
@@ -46,7 +46,7 @@ const SignUp = ({ setActiveTab }) => {
           placeholder="Şifre"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border focus:border-b-2 focus:border-red-500"
         />
 
         <button
